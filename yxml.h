@@ -24,7 +24,7 @@
 #define YXML_H
 
 #include <stddef.h>
-#include "PSXINT.h"
+#include <stdint.h>
 
 #if defined(_MSC_VER) && !defined(__cplusplus) && !defined(inline)
 #define inline __inline
