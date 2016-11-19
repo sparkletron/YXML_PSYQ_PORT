@@ -1,0 +1,16 @@
+CC:=gcc
+AR:=ar
+CFLAGS:=-Wall -Wextra -Wno-unused-parameter -O2 -g
+
+.PHONY: clean all test
+
+all: libyxml.a
+
+libyxml.a: yxml.c yxml.h
+	$(CC) $(CFLAGS) -I. -c yxml.c
+	$(AR) rcs libyxml.a yxml.o
+	rm -rf yxml.o
+
+# yxml.c isn't cleaned, since it's included in git
+clean:
+	rm -f yxml.o libyxml.a
